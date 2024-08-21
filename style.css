@@ -18,14 +18,11 @@
     /*font-family*/
     --ff-main:"Be Vietnam Pro", sans-serif;
 }
-
-/*general style*/
 body{
-    display: flex;
-    flex-direction: column;
-    overflow-x:hidden;
-   
+    overflow-x: hidden;
 }
+/*general style*/
+
 main{
     margin: auto;
     width:  calc(100vw - 5rem) ;
@@ -49,6 +46,74 @@ header .heading-container i{
     cursor: pointer;
     color: var(--main-clr);
 }
+
+header .heading-container ul , header button {
+    display: none;
+}
+
+@media (min-width:1213px) {
+    .abs{
+        position: absolute;
+        z-index: -1;
+        width: 1400px !important;
+        top: -600px !important;
+        right: -500px !important;
+    }
+   header button {
+        display: block;
+    }
+    header{
+        margin-bottom: 5rem;
+        padding: 0;
+    }
+    header .heading-container ul{
+        display: flex;
+        list-style: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+        font-size: 1rem;
+        color: var(--main-clr);  
+    }
+
+    header .heading-container ul a{
+        text-decoration: none;
+    }
+
+
+
+    header .heading-container i{
+        display: none;
+    }
+    
+    .hero .container{
+        display: grid;
+        grid-template: "text image"
+                      / 1fr  1fr;
+        margin-inline: 5rem;
+    } 
+    .hero .container .hero-text{
+        grid-area: text;
+        text-align: left !important;
+        align-items: flex-start !important;
+        
+    }
+    .hero .container .hero-text p{
+        padding-left:0;
+        padding-top:2rem;
+        font-size: 0.6rem;
+        text-align: left !important; 
+    }
+
+    .hero .container .hero-image{
+        grid-area: image;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
 /**/
  .container{
     display: flex;
@@ -57,7 +122,7 @@ header .heading-container i{
     justify-content: center;
 }
 .hero .container img{
-    width: min(80vw , 800px) ;
+    width: min(80vw , 600px) ;
 }
 
 .hero .container .hero-text{
@@ -94,6 +159,9 @@ header .heading-container i{
     font-weight: 600;
     text-transform: capitalize;
     box-shadow: 0 3px 8px var(--accent-clr-shadow);
+    cursor: pointer;
+
+    
 
 }
 
@@ -105,8 +173,17 @@ header .heading-container i{
     line-height: 3.2rem;
     text-align: center;
     width: 12ch;
+    
 
 }
+.info .container .info-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
 
 
 .info .container  p{
@@ -137,14 +214,20 @@ header .heading-container i{
 
 
 .raison .title::before{
-    content: '01';
+    content: '';
     color: white;
     background-color: var(--accent-clr);
     padding: 1rem 2rem;
-    border-radius: 2rem;
-    
-    
-    
+    border-radius: 2rem;  
+}
+.raison .title-1::before{
+    content: '01';
+}
+.raison .title-2::before{
+    content: '02';
+}
+.raison .title-3::before{
+    content: '03';
 }
 .raison {
     margin-bottom: 3rem;
@@ -154,6 +237,47 @@ header .heading-container i{
     align-items: center;
 }
 
+@media (min-width:1213px) {
+    .info .container{
+        display: grid;
+        grid-template: "info-text r1 "
+                        " .      r2"
+                        "  .     r3"
+                        / 2fr    1fr ;
+    }
+
+    .info-text{
+        grid-area: info-text;
+
+    }
+    .r1{
+        grid-area: r1;
+    }
+    .r2{
+        grid-area: r2;
+    }
+    .r3{
+        grid-area: r3;
+    }
+    .info .container .info-text{
+        display: block;
+        text-align: left;
+
+    }
+    .info .container .info-text h2{
+        font-size: 3.6rem;
+        width: 20ch;
+        text-align: left;
+        line-height: 4rem;
+        padding-inline: 4.2rem;
+    }
+    .info .container .info-text p{
+        padding-inline: 4.2rem;
+    }
+    main .container{
+        margin-bottom:10rem ;
+    }
+}
 
 footer{
     background-color: var(--accent-clr);
@@ -189,4 +313,13 @@ footer .container h1{
     left: 0;
     width: 150px;
     
+}
+@media (min-width:1484px) {
+    footer .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+    }
 }
