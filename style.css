@@ -20,12 +20,14 @@
 }
 body{
     overflow-x: hidden;
+    width:  max(100vw , 700px);
 }
 /*general style*/
 
 main{
+    padding-inline: 5rem;
     margin: auto;
-    width:  calc(100vw - 5rem) ;
+    width:  max(100vw , 700px);
     overflow-x: hidden;
     font-family: var(--ff-main);
     
@@ -323,3 +325,4 @@ footer .container h1{
 
     }
 }
+
